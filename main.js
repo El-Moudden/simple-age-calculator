@@ -3,10 +3,10 @@ let btn = document.getElementById("btnInput");
 let dateInput = document.getElementById("dateInput") ;
 
 function calculateAge(){
-  let birthday = dateInput.value
-  // console.log(birthday)
+  let birthday = dateInput.value;
+ 
 
-  if (birthday== ""){
+  if (birthday === ""){
     document.getElementById("result").textContent = "Please Enter Your Birthday"
   } else {
     let age = getAge(birthday)
@@ -17,18 +17,16 @@ function calculateAge(){
 function getAge(birthday) {
   let currentDate = new Date() ;
   let birthdayValue = new Date(birthday)
-  age = currentDate.getFullYear()-birthdayValue.getFullYear()
-  let month = currentDate.getMonth()-birthdayValue.getMonth();
+  age = currentDate.getFullYear() - birthdayValue.getFullYear()
   
-   
-  if (currentDate.getMonth() < birthdayValue.getMonth() || currentDate.getMonth() == birthdayValue.getMonth() && currentDate.getDate() < birthdayValue.getDate()) {
+  if (currentDate.getMonth() < birthdayValue.getMonth() || currentDate.getMonth() === birthdayValue.getMonth() && currentDate.getDate() < birthdayValue.getDate()) {
 
     age--
     
   }
   return age ;
   
-}
+};
 
 
 
